@@ -11,9 +11,9 @@
 
 backend:
   name: github
-  repo: your-username/your-repo-name # <-- CHANGE THIS
+  repo: Parnian-anbr/Next-Hastan # <-- CHANGE THIS
   branch: main
-  base_url: https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev # <-- see decap-oauth-worker/README.md
+  base_url: https://hastan.workers.dev # <-- see decap-oauth-worker/README.md
 
 # Where uploaded images get committed to, and the public URL path
 # Next.js will read them from.
