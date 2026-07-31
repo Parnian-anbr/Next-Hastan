@@ -1,0 +1,50 @@
+# Decap CMS configuration.
+#
+# IMPORTANT — before this works, you need to:
+#   1. Replace `repo` below with your actual "username/repo-name" once
+#      you've pushed this project to GitHub.
+#   2. Set up GitHub OAuth so your admin can log in. The "github" backend
+#      needs an OAuth app + a small token-exchange proxy — Netlify hosts
+#      one for free automatically, but since we're using Cloudflare Pages
+#      we'll deploy a tiny open-source OAuth worker for this. Covered in
+#      the next step, once the repo actually exists on GitHub.
+
+backend:
+  name: github
+  repo: your-username/your-repo-name # <-- CHANGE THIS
+  branch: main
+
+# Where uploaded images get committed to, and the public URL path
+# Next.js will read them from.
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "essays"
+    label: "Essays"
+    folder: "content/essays"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "about"
+    label: "About Pages"
+    files:
+      - name: "fa"
+        label: "About (Persian)"
+        file: "content/about/fa.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "en"
+        label: "About (English)"
+        file: "content/about/en.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }

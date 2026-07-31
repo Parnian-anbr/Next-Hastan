@@ -1,0 +1,397 @@
+.blogPostContainer {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  animation: fadeIn 0.6s ease-out;
+  direction: rtl;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  margin-bottom: 3rem;
+  animation: slideDown 0.7s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.metadata {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.author {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.separator {
+  color: var(--color-accent-light);
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+.date {
+  font-size: 1rem;
+  color: var(--color-dark);
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: black;
+  opacity: 0.1;
+  border-radius: 1px;
+  width: 100%;
+}
+
+.content {
+  line-height: 1.85;
+  animation: slideUp 0.7s ease-out 0.1s both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typography for MDX content */
+.content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.content h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+  border-radius: 2px;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 8px 24px rgba(165, 128, 60, 0.12);
+  display: block;
+  animation: imageLoad 0.8s ease-out;
+}
+
+@keyframes imageLoad {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.content a {
+  position: relative;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 300ms ease;
+}
+
+.content a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 300ms ease;
+}
+
+.content a:hover {
+  color: var(--color-accent-dark);
+}
+
+.content a:hover::after {
+  width: 100%;
+}
+
+.content ul,
+.content ol {
+  margin: 1.5rem 0;
+  padding-left: 2.5rem;
+}
+
+.content li {
+  margin-bottom: 0.75rem;
+  color: var(--color-dark);
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+.content ul li::marker {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.content ol li::marker {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.content blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(90deg, rgba(165, 128, 60, 0.05) 0%, rgba(165, 128, 60, 0.02) 100%);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0.25rem;
+  font-style: italic;
+  color: var(--color-dark);
+  opacity: 0.85;
+  transition: all 300ms ease;
+}
+
+.content blockquote:hover {
+  background: linear-gradient(90deg, rgba(165, 128, 60, 0.08) 0%, rgba(165, 128, 60, 0.04) 100%);
+  border-left-color: var(--color-accent-dark);
+}
+
+.content code {
+  background-color: rgba(165, 128, 60, 0.08);
+  color: var(--color-accent-dark);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.content pre {
+  background-color: var(--color-dark);
+  color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.content pre code {
+  background-color: transparent;
+  color: #f0f0f0;
+  padding: 0;
+}
+
+/* Old styles for compatibility */
+.blogHeader {
+  padding: 6rem 0;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.blogContent {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.blogTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.blogMeta {
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
+
+.blogBody {
+  max-width: none;
+}
+
+/* ================================
+   Blog List Page
+================================ */
+
+.essayList {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.essayCard {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 2.5rem;
+
+  padding: 2.8rem 0;
+
+  border-bottom: 1px solid rgba(165, 128, 60, 0.15);
+}
+
+.essayImage {
+  flex: 0 0 340px;
+}
+
+.essayImage img,
+.essayImage :global(.gatsby-image-wrapper) {
+  width: 340px;
+  height: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.essayContent {
+  flex: 1;
+  text-align: right;
+}
+
+.essayMeta {
+  color: var(--color-light);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+}
+
+.essayTitle {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.essayTitle a {
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: color 250ms ease;
+}
+
+.essayTitle a:hover {
+  color: var(--color-accent);
+}
+
+.essayExcerpt {
+  margin-top: 1rem;
+  color: var(--color-light);
+  line-height: 2;
+  font-size: 1.05rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.readMore {
+  display: inline-block;
+  margin-top: 1.25rem;
+
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: color 250ms ease;
+}
+
+.readMore:hover {
+  color: var(--color-accent-dark);
+}
+
+@media (max-width: 900px) {
+  .essayCard {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .essayImage,
+  .essayImage img,
+  .essayImage :global(.gatsby-image-wrapper) {
+    width: 100%;
+    height: 230px;
+  }
+}

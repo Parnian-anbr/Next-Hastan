@@ -1,0 +1,116 @@
+@reference "../app/globals.css";
+
+.layout {
+    @apply min-h-screen flex flex-col;
+}
+
+.header {
+    @apply fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-sm border border-solid border-indigo-600;
+    padding: 1rem 0;
+}
+
+.headerTitle {
+    @apply text-2xl font-bold text-light;
+}
+
+.headerContent {
+    @apply container mx-auto flex items-center justify-between px-4 mr-[1vw];
+    direction: rtl;
+}
+
+.nav {
+    @apply flex-1 flex;
+}
+
+.navList {
+    @apply flex gap-8 justify-end;
+}
+
+.dropdownContainer {
+    @apply relative;
+}
+
+/* .dropdown {
+    @apply fixed left-0 right-0 top-[calc(100%)] bg-dark/95 backdrop-blur-sm border-t border-b border-solid border-indigo-600 z-40 opacity-0 invisible transition-all duration-300 ease-out;
+    transform: translateY(-10px);
+} */
+
+.dropdown {
+    @apply fixed left-0 right-0 top-full bg-dark/95 backdrop-blur-sm border-t border-b border-indigo-600 z-40 overflow-hidden invisible;
+    /* transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.3,0.8,0.3,2.3)]; */
+    transition: 0.7s ease;
+    max-height: 0;
+    /* translate: 0 -20px; */
+}
+
+/* .dropdownOpen {
+    @apply opacity-100 visible;
+    transform: translateY(0px);
+} */
+
+.dropdownOpen {
+    @apply opacity-100 visible;
+    max-height: 500px;
+    /* must be >= content height */
+    /* translate: 0 0; */
+}
+
+.dropdownList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  width: 50rem;
+    @apply gap-0 px-4 py-4; 
+}
+
+.dropdownLink {
+    @apply text-light/80 hover:text-accent transition-colors duration-300 text-base px-2 py-1 block border border-indigo-600/30  translate-x-0
+    hover:-translate-x-[0.8rem]
+    transition-transform
+    duration-300
+    ease-[cubic-bezier(0.4,0,0.2,1)];
+}
+
+.dropdownLink:last-child {
+    @apply border-0;
+}
+
+.navLink {
+    @apply text-light hover:text-accent transition-colors duration-300 text-base text-lg;
+}
+
+.logoContainer {
+    @apply text-light ml-8;
+}
+
+.logo {
+    @apply hover:text-accent transition-colors duration-300;
+}
+
+.main {
+    @apply flex-1 border border-solid border-cyan-600 border-8;
+    padding-top: 3rem;
+    /* Height of the header */
+}
+
+.pageTitle {
+    @apply text-3xl font-bold mb-6 text-dark;
+}
+
+.footer {
+    @apply bg-dark py-6;
+}
+
+.footerContent {
+    @apply container mx-auto flex flex-row-reverse items-center justify-center px-4;
+}
+
+.footerTitle {
+    @apply text-light/80 text-xl font-semibold pl-12 mb-2;
+}
+
+.socialLinks {
+    @apply flex gap-8;
+}
+
+.socialLink {
+    @apply text-light/80 hover:text-accent transition-colors duration-300;
+}
