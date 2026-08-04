@@ -66,7 +66,7 @@ export default function Hero() {
             >
               {slides[index].title}
             </motion.h1>
-            <motion.p
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
@@ -74,8 +74,8 @@ export default function Hero() {
               style={{ direction: "rtl" }}
             >
               {slides[index].desc}
-            </motion.p>
-            <motion.p
+            </motion.div>
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
@@ -90,7 +90,7 @@ export default function Hero() {
                   <FaYoutube size={48} />
                 </a>
               </div>
-            </motion.p>
+            </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>
