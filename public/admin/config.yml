@@ -28,6 +28,10 @@ collections:
     slug: "{{fields.slug}}"   
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - label: "Slug (web address)"
+        name: "slug"
+        widget: "string"
+        hint: "English letters, numbers, and hyphens only — e.g. my-second-post. This becomes the essay's URL and shouldn't be changed after publishing."
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
