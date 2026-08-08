@@ -19,6 +19,13 @@ export type Essay = EssayMeta & {
   contentHtml: string;
 };
 
+function normalizeDate(value: unknown): string {
+  if (value instanceof Date) {
+    return value.toISOString().split("T")[0];
+  }
+  return typeof value === "string" ? value : "";
+}
+
 // Reads every markdown file in content/essays/. Runs at BUILD time only
 // (this is a static export — there's no server reading these at request
 // time), so adding/editing a file requires a rebuild+redeploy, which is
@@ -38,7 +45,7 @@ export function getAllEssays(): EssayMeta[] {
       slug,
       title: data.title ?? slug,
       author: data.author ?? "",
-      date: data.date ?? "",
+      date: normalizeDate(data.date),
       excerpt: data.excerpt ?? "",
       image: data.image ?? "",
     };
@@ -61,7 +68,7 @@ export async function getEssayBySlug(slug: string): Promise<Essay | null> {
     slug,
     title: data.title ?? slug,
     author: data.author ?? "",
-    date: data.date ?? "",
+    date: normalizeDate(data.date),
     excerpt: data.excerpt ?? "",
     image: data.image ?? "",
     contentHtml: processed.toString(),
