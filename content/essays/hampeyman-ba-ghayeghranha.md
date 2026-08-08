@@ -1,5 +1,6 @@
 ---
 title: در میانِ طوفان، هم‌پیمان با قایقران‌ها
+slug: hampeyman-ba-ghayeghranha
 author: کانون هستان
 date: 2026-06-13
 excerpt: ""
