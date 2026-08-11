@@ -45,7 +45,7 @@ const CarouselSection = () => {
                    transition-all duration-500 ease-out shadow-xl"
         aria-label="Scroll left"
       >
-        <RiArrowLeftWideFill size={32} />
+        <RiArrowRightWideLine size={32} />
       </button>
       <div
         ref={scrollRef}
@@ -88,7 +88,7 @@ const CarouselSection = () => {
                    transition-all duration-500 ease-out shadow-xl"
         aria-label="Scroll right"
       >
-        <RiArrowRightWideLine size={32} />
+        <RiArrowLeftWideFill size={32} />
       </button>
     </div>
   );

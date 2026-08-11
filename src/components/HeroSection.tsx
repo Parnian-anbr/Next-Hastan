@@ -56,11 +56,16 @@ export default function Hero({
             </div>
 
             <div className="relative h-full flex flex-col justify-end items-start text-center px-24 pb-52">
-              <motion.h1
+              <a
+                href={`/essays/${essays[index].slug}`}
+                className="group flex flex-col justify-end items-start text-center"
+                aria-label={essays[index].title}
+              >
+                <motion.h1
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-                className="text-white text-3xl md:text-5xl font-bold mb-4"
+                className="text-white text-3xl md:text-5xl font-bold mb-4 transition-colors duration-200 group-hover:text-accent"
               >
                 {essays[index].title}
               </motion.h1>
@@ -68,11 +73,12 @@ export default function Hero({
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
-                className="text-gray-200 text-lg md:text-2xl font-bold max-w-xl"
+                className="text-gray-200 text-lg md:text-2xl font-bold max-w-xl transition-colors duration-200 group-hover:text-accent"
                 style={{ direction: "rtl" }}
               >
                 {essays[index].excerpt}
               </motion.div>
+              </a>
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -81,10 +87,10 @@ export default function Hero({
                 style={{ direction: "rtl" }}
               >
                 <div className="flex py-4 sm:justify-start justify-center">
-                  <a href="#" className={` px-4`} aria-label="Castbox">
+                  <a href="https://castbox.fm/" className="px-4 text-gray-200 hover:text-accent transition-colors duration-200" aria-label="Castbox">
                     <SiCastbox size={42} />
                   </a>
-                  <a href="#"  aria-label="YouTube">
+                  <a href="https://youtube.com/" className="text-gray-200 hover:text-accent transition-colors duration-200" aria-label="YouTube">
                     <FaYoutube size={48} />
                   </a>
                 </div>

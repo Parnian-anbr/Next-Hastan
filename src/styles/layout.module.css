@@ -100,7 +100,7 @@
 }
 
 .footerContent {
-    @apply container mx-auto flex flex-row-reverse items-center justify-center px-4;
+    @apply container mx-auto flex flex-row items-center justify-center;
 }
 
 .footerTitle {
