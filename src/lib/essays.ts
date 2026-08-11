@@ -59,6 +59,12 @@ export function getAllEssays(): EssayMeta[] {
   return essays.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+export function getFeaturedEssays(): EssayMeta[] {
+  return getAllEssays()
+    .filter((essay) => essay.featured)
+    .sort((a, b) => a.featuredOrder - b.featuredOrder);
+}
+
 export async function getEssayBySlug(slug: string): Promise<Essay | null> {
   const filePath = path.join(ESSAYS_DIR, `${slug}.md`);
   if (!fs.existsSync(filePath)) return null;
