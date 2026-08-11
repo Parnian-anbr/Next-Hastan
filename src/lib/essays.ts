@@ -13,6 +13,8 @@ export type EssayMeta = {
   date: string;
   excerpt: string;
   image: string;
+  featured: boolean;
+  featuredOrder: number;
 };
 
 export type Essay = EssayMeta & {
@@ -48,6 +50,8 @@ export function getAllEssays(): EssayMeta[] {
       date: normalizeDate(data.date),
       excerpt: data.excerpt ?? "",
       image: data.image ?? "",
+      featured: data.featured ?? false,
+      featuredOrder: data.featuredOrder ?? 0,
     };
   });
 
@@ -71,6 +75,8 @@ export async function getEssayBySlug(slug: string): Promise<Essay | null> {
     date: normalizeDate(data.date),
     excerpt: data.excerpt ?? "",
     image: data.image ?? "",
+    featured: data.featured ?? false,
+    featuredOrder: data.featuredOrder ?? 0,
     contentHtml: processed.toString(),
   };
 }

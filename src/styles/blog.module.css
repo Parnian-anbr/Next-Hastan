@@ -332,7 +332,7 @@
 }
 
 .essayMeta {
-  color: var(--color-light);
+  color: var(--color-dark);
   font-size: 0.95rem;
   margin-bottom: 0.8rem;
   opacity: 0.8;
@@ -357,7 +357,7 @@
 
 .essayExcerpt {
   margin-top: 1rem;
-  color: var(--color-light);
+  color: var(--color-dark);
   line-height: 2;
   font-size: 1.05rem;
 
