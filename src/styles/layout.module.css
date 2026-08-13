@@ -9,9 +9,7 @@
     padding: 1rem 0;
 }
 
-.headerTitle {
-    @apply text-2xl font-bold text-light;
-}
+
 
 .headerContent {
     @apply container mx-auto flex items-center justify-between px-4 mr-[1vw];
@@ -81,9 +79,7 @@
     @apply text-light ml-8;
 }
 
-.logo {
-    @apply hover:text-accent transition-colors duration-300;
-}
+
 
 .main {
     @apply flex-1 border border-solid border-cyan-600 border-8;
@@ -91,9 +87,7 @@
     /* Height of the header */
 }
 
-.pageTitle {
-    @apply text-3xl font-bold mb-6 text-dark;
-}
+
 
 .footer {
     @apply bg-dark py-6;

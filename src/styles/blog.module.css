@@ -152,6 +152,16 @@
   animation: imageLoad 0.8s ease-out;
 }
 
+/* Explicit class for blog hero or inline images referenced from templates */
+.blogImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
 @keyframes imageLoad {
   from {
     opacity: 0;
