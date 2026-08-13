@@ -19,11 +19,14 @@ export default function Hero({
 
   // Kept as in your original — auto-advance timer was commented out there too.
   useEffect(() => {
-    // const timer = setInterval(() => {
-    //     setIndex((prev) => (prev + 1) % essays.length);
-    // }, 5000);
-    // return () => clearInterval(timer);
-  }, []);
+    if (!essays || essays.length === 0) return;
+
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % essays.length);
+    }, 7000);
+
+    return () => clearInterval(timer);
+  }, [essays.length]);
 
   // If essays changes (or becomes empty), ensure index is valid.
   useEffect(() => {
@@ -42,10 +45,10 @@ export default function Hero({
         {essays && essays.length > 0 && (
           <motion.div
             key={index}
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ x: "100%" ,opacity: 0.8,}}
+            animate={{ x: 0 ,opacity: 1}}
+            exit={{ x: "-100%" ,opacity: 0.8,}}
+            transition={{ duration: 1.2,  ease: [0.22, 1, 0.36, 1],}}
             className="absolute inset-0 w-full h-full"
           >
             <div

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import type { EssayMeta } from "@/lib/essays";
 
 export default function RecentEssaySection({
@@ -20,7 +21,7 @@ export default function RecentEssaySection({
       <section className="w-full py-12 flex justify-center">
         <div className="w-full max-w-5xl px-6 text-center text-gray-500">
           <h2 className="text-3xl font-bold mb-4">Recent Essays</h2>
-          <p>No essays published yet.</p>
+          <p>هنوز مقاله‌ای منتشر نشده.</p>
         </div>
       </section>
     );
@@ -29,7 +30,9 @@ export default function RecentEssaySection({
   return (
     <section className="w-full py-12 flex justify-center">
       <div className="w-full max-w-5xl px-6">
-        <h2 className="text-3xl font-bold mb-8">Recent Essays</h2>
+        <Link href="/essays" className="inline-block transition-colors duration-200 hover:text-accent">
+          <h2 className="text-3xl font-bold mb-8">آخرین مقالات</h2>
+        </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {recentEssays.map((essay) => (
