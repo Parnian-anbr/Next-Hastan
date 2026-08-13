@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import styles from "@/styles/layout.module.css";
 import "./globals.css";
 
 // Replaces the old seo.tsx (which ran a Gatsby GraphQL query for the
@@ -23,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        <div className={styles.layout}>
+        <div className="min-h-screen flex flex-col">
           <SiteHeader />
-          <main className={styles.main}>{children}</main>
+          <main className="flex-1 pt-12">{children}</main>
           <SiteFooter />
         </div>
       </body>

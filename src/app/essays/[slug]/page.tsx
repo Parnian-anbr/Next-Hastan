@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import styles from "@/styles/blog.module.css";
 import { getAllEssays, getEssayBySlug } from "@/lib/essays";
 
 export function generateStaticParams() {
@@ -27,19 +26,20 @@ export default async function EssayPage({
   if (!essay) notFound();
 
   return (
-    <article className={styles.blogPostContainer}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{essay.title}</h1>
-        <div className={styles.metadata}>
-          <span className={styles.author}>{essay.author}</span>
-          <span className={styles.separator}>•</span>
-          <time className={styles.date}>{essay.date}</time>
+    <article className="relative max-w-3xl mx-auto px-6 py-12" dir="rtl">
+      <div className="mb-8">
+        <h1 className="text-3xl font-extrabold mb-4">{essay.title}</h1>
+        <div className="flex items-center justify-start gap-3 mb-4">
+          <span className="text-sm font-semibold text-[var(--color-accent)]">{essay.author}</span>
+          <span className="text-[var(--color-accent-light)]">•</span>
+          <time className="text-sm text-[var(--color-dark)] opacity-70">{essay.date}</time>
         </div>
-        <div className={styles.divider}></div>
+        <div className="w-full h-[2px] bg-black/10 mb-6" />
       </div>
-      <div className={styles.content}>
+
+      <div className="prose prose-lg max-w-none">
         {essay.image && (
-          <img src={essay.image} alt={essay.title} className={styles.blogImage} />
+          <img src={essay.image} alt={essay.title} className="w-full h-auto rounded-md mb-6" />
         )}
         <div dangerouslySetInnerHTML={{ __html: essay.contentHtml }} />
       </div>

@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 import { FaYoutube } from "react-icons/fa";
 import { SiCastbox } from "react-icons/si";
-import styles from "@/styles/layout.module.css";
 import { EssayMeta } from "@/lib/essays";
 
 // Slides constant removed — this component now renders from the `essays` prop.
