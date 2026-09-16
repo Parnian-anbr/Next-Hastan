@@ -34,7 +34,7 @@ export default function SiteHeader() {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-sm border border-indigo-600 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-sm py-4">
       <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-8">
           <div className="flex items-center">
@@ -70,7 +70,7 @@ export default function SiteHeader() {
                     {dropdownOptions.map((option, index) => (
                       <li key={index} className="flex px-2 py-2">
                         <span className="bg-white h-full w-[1px] rounded-full inline-block mr-2" />
-                        <Link href="#" className="text-light/80 hover:text-accent transition-colors duration-300 text-base px-2 py-1 block border border-indigo-600/30 hover:-translate-x-3 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
+                        <Link href="#" className="text-light/80 hover:text-accent transition-colors duration-300 text-base px-2 py-1 block hover:-translate-x-3 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
                           {option}
                         </Link>
                       </li>

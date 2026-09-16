@@ -12,7 +12,7 @@ export default function SiteFooter() {
   return (
     <footer className="bg-dark py-6">
       <div className="max-w-7xl mx-auto flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <h2 className="text-light/80 text-xl font-semibold pl-12 mb-2">ارتباط با ما</h2>
+        <h2 className="hidden md:block text-light/80 text-xl font-semibold pl-12 mb-2">ارتباط با ما</h2>
         <div className="flex gap-8 ml-6">
           <a href="#" className="text-light/80 hover:text-accent transition-colors duration-300" aria-label="Instagram">
             <FaInstagram size={24} />

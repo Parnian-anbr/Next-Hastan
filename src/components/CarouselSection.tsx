@@ -36,7 +36,7 @@ const CarouselSection = () => {
   ];
 
   return (
-    <div className="flex items-center gap-4 w-full mx-auto px-2 lg:px-32 bg-dark py-12 relative overflow-hidden">
+    <div className="flex items-center gap-4 w-full mx-auto px-2 lg:px-32 bg-dark py-12 relative overflow-hidden mb-2">
       <button
         onClick={() => scroll("left")}
         className="hidden lg:flex items-center justify-center w-14 h-14 rounded-full
