@@ -1,11 +1,31 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import "./globals.css";
 
-// Replaces the old seo.tsx (which ran a Gatsby GraphQL query for the
-// site title). This is the default metadata for every page; individual
-// pages can override it by exporting their own `metadata` object.
+const myFont = localFont({
+  src: [
+    {
+      path: "./fonts/Ahang-RegularSharp.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Ahang-BoldSharp.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Ahang-BlackSharp.ttf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-my-font",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "هستان",
@@ -20,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl" className="h-full antialiased">
+    <html lang="fa" dir="rtl" className={`${myFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <div className="min-h-screen flex flex-col">
           <SiteHeader />

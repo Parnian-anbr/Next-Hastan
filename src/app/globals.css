@@ -31,10 +31,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  /* Placeholder system font stack — no external font CDN dependency,
-     which matters given how unreliable Google Fonts can be from Iran. */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-my-font), sans-serif;
+}
+
+* {
+  font-family: var(--font-my-font), sans-serif;
 }
 
 /* Ported from your original global.css (was written for Tailwind v3's

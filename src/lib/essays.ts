@@ -51,7 +51,7 @@ export function getAllEssays(): EssayMeta[] {
       excerpt: data.excerpt ?? "",
       image: data.image ?? "",
       featured: data.featured ?? false,
-      featuredOrder: data.featuredOrder ?? 0,
+      featuredOrder: data.featured_order ?? 0,   
     };
   });
 
@@ -82,7 +82,7 @@ export async function getEssayBySlug(slug: string): Promise<Essay | null> {
     excerpt: data.excerpt ?? "",
     image: data.image ?? "",
     featured: data.featured ?? false,
-    featuredOrder: data.featuredOrder ?? 0,
+     featuredOrder: data.featured_order ?? 0, 
     contentHtml: processed.toString(),
   };
 }
